@@ -1,0 +1,7 @@
+[user]
+	name = henriwasd
+	email = 38558536+henriwasd@users.noreply.github.com
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main
