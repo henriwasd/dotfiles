@@ -132,6 +132,7 @@ alias co= "checkout"
 alias f= "fetch"
 alias m= "merge"
 alias t= "tag"
+alias lg="lazygit"
 
 # Flutter
 # export PATH="$PATH:`pwd`/flutter/bin"
