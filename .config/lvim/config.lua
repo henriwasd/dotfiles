@@ -10,6 +10,8 @@ lvim.colorscheme = "tokyonight"
 
 lvim.format_on_save = true
 
+vim.opt.relativenumber = true
+
 lvim.plugins = {
   { "mfussenegger/nvim-dap" },
   {

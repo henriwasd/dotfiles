@@ -71,14 +71,13 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    # fzf
-    # git
-    # history-substring-search
-    # colored-man-pages
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-    # zsh-z
+  git
+  history-substring-search
+  colored-man-pages
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 )
+
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,13 +107,14 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+. "$HOME/.asdf/asdf.sh"
 
-eval "$(starship init zsh)"
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
 
-export STARSHIP_CONFIG=~/.config/starship.toml
-
-. /opt/asdf-vm/asdf.sh
+source "$HOME/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 export PATH=$HOME/.local/bin:$HOME/.cargo/bin:$PATH
 
@@ -132,30 +132,14 @@ alias co= "checkout"
 alias f= "fetch"
 alias m= "merge"
 alias t= "tag"
-alias lg="lazygit"
-
-# Flutter
-# export PATH="$PATH:`pwd`/flutter/bin"
-
-# Flutter
-export PATH=$HOME/Applications/flutter/bin:$PATH
-
-# Java
-. ~/.asdf/plugins/java/set-java-home.zsh
 
 # Oracle Client
-export LD_LIBRARY_PATH="/opt/oracle/instantclient_21_12"
+export LD_LIBRARY_PATH=/opt/oracle/instantclient_21_11:$LD_LIBRARY_PATH
 
 # Oracle Client
 export NLS_LANG="BRAZILIAN PORTUGUESE_BRAZIL.WE8ISO8859P1"
 
-# Snapd
-export PATH="/var/lib/snapd/snap/bin:$PATH"
+eval "$(starship init zsh)"
+export STARSHIP_CONFIG=~/.config/starship.toml
 
-export ANDROID_HOME=~/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-export CHROME_EXECUTABLE=/bin/chromium
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
