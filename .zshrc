@@ -118,7 +118,7 @@ export STARSHIP_CONFIG=~/.config/starship.toml
 
 export PATH=$HOME/.local/bin:$HOME/.cargo/bin:$PATH
 
-alias ls="exa --icons -la"
+alias ls="exa --icons"
 alias bat="bat --style=auto"
 alias a= "add"
 alias c= "commit"
