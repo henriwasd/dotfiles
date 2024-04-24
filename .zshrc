@@ -114,8 +114,6 @@ fpath=(${ASDF_DIR}/completions $fpath)
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
 
-source "$HOME/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-
 export PATH=$HOME/.local/bin:$HOME/.cargo/bin:$PATH
 
 alias ls="exa --icons"
@@ -139,7 +137,8 @@ export LD_LIBRARY_PATH=/opt/oracle/instantclient_21_11:$LD_LIBRARY_PATH
 # Oracle Client
 export NLS_LANG="BRAZILIAN PORTUGUESE_BRAZIL.WE8ISO8859P1"
 
-eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship.toml
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+eval "$(starship init zsh)"
