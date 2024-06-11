@@ -12,6 +12,8 @@ lvim.format_on_save = true
 
 vim.opt.relativenumber = true
 
+vim.cmd("Copilot enable")
+
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
   { command = "eslint", filetypes = { "typescript", "typescriptreact" } }
@@ -116,7 +118,7 @@ lvim.plugins = {
     "zbirenbaum/copilot-cmp",
     config = function()
       require("copilot_cmp").setup({
-        suggestion = { enabled = false },
+        suggestion = { enabled = true },
         panel = { enabled = false }
       })
     end
