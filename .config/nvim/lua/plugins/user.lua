@@ -82,4 +82,13 @@ return {
       )
     end,
   },
+  {
+
+"github/copilot.nvim",
+
+event = "VeryLazy",
+
+version = "*"
+
+},
 }

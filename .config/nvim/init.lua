@@ -18,4 +18,20 @@ end
 require "lazy_setup"
 require "polish"
 
+vim.api.nvim_set_keymap("n", "gr", ":lua require'telescope.builtin'.lsp_references()<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "gd", ":lua vim.lsp.buf.definition()<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "gD", ":lua vim.lsp.buf.type_definition()<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "gf", ":Telescope frecency<cr>", { noremap = true, silent = true })
+
+vim.opt.textwidth = 160
+
+return {
+{
+"github/copilot.vim",
+event = "InsertEnter",
+autoStart = true,
+},
+}
+
+
 
