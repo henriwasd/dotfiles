@@ -12,8 +12,6 @@ lvim.format_on_save = true
 
 vim.opt.relativenumber = true
 
-vim.cmd("Copilot enable")
-
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
   { command = "eslint", filetypes = { "typescript", "typescriptreact" } }
