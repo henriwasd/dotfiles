@@ -139,4 +139,4 @@ export STARSHIP_CONFIG=~/.config/starship.toml
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 eval "$(starship init zsh)"
-eval "$(vfox activate zsh)"
+eval "$(mise activate zsh)"
