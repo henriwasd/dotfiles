@@ -21,11 +21,11 @@ return {
   },
 
   -- change trouble config
-  -- {
-  --   "folke/trouble.nvim",
-  --   -- opts will be merged with the parent spec
-  --   opts = { use_diagnostic_signs = true },
-  -- },
+  {
+    "folke/trouble.nvim",
+    -- opts will be merged with the parent spec
+    opts = { use_diagnostic_signs = true },
+  },
   --
   -- -- disable trouble
   -- { "folke/trouble.nvim", enabled = false },
@@ -317,13 +317,22 @@ return {
     event = "VeryLazy",
   },
   {
-  "folke/tokyonight.nvim",
-  opts = {
-    transparent = true,
-    styles = {
-      sidebars = "transparent",
-      floats = "transparent",
-    },
+  "williamboman/mason-lspconfig.nvim",
+  dependencies = { "williamboman/mason.nvim" },
+    opts = {
+      ensure_installed = { "lua_ls", "rust_analyzer", "prettier" },
+    }
   },
+  {
+  "oxfist/night-owl.nvim",
+  lazy = false, -- make sure we load this during startup if it is your main colorscheme
+  priority = 1000, -- make sure to load this before all the other start plugins
+  config = function()
+    -- load the colorscheme here
+    require("night-owl").setup({
+        transparent_background = true
+      })
+    vim.cmd.colorscheme("night-owl")
+  end,
 }
 }
