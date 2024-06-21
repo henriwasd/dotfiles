@@ -2,6 +2,7 @@ return {
   {
     "akinsho/flutter-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "stevearc/dressing.nvim" },
+    lazy = true,
     config = function()
       require("flutter-tools").setup({
         lsp = {

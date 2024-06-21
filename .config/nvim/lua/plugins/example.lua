@@ -110,8 +110,11 @@ return {
 
   -- for typescript, LazyVim also includes extra specs to properly setup lspconfig,
   -- treesitter, mason and typescript.nvim. So instead of the above, you can use:
-  { import = "lazyvim.plugins.extras.lang.typescript" },
-
+  { import = "lazyvim.plugins.extras.lang.typescript", event = "VeryLazy", },
+  { import = "lazyvim.plugins.extras.coding.copilot" },
+  -- { import = "lazyvim.plugins.extras.linting.eslint" },
+  -- { import = "lazyvim.plugins.extras.formatting.prettier" },
+  --
   -- add more treesitter parsers
   -- {
   --   "nvim-treesitter/nvim-treesitter",
@@ -173,7 +176,7 @@ return {
   { import = "lazyvim.plugins.extras.ui.mini-starter" },
 
   -- add jsonls and schemastore packages, and setup treesitter for json, json5 and jsonc
-  { import = "lazyvim.plugins.extras.lang.json" },
+  { import = "lazyvim.plugins.extras.lang.json", event = "VeryLazy", },
 
   -- add any tools you want to have installed below
   -- {
@@ -233,11 +236,15 @@ return {
   --   end,
   -- },
   {
-  "williamboman/mason-lspconfig.nvim",
-  dependencies = { "williamboman/mason.nvim" },
-    opts = {
-      ensure_installed = { "lua_ls", "rust_analyzer", "prettier" },
-    }
+    "williamboman/mason.nvim",
+    opts = { ensure_installed = { "prettier" } },
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    dependencies = { "williamboman/mason.nvim" },
+      opts = {
+        ensure_installed = { "lua_ls", "rust_analyzer" },
+      }
   },
   {
     "smoka7/multicursors.nvim",
