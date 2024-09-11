@@ -139,7 +139,7 @@ export STARSHIP_CONFIG=~/.config/starship.toml
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 eval "$(starship init zsh)"
-eval "$(mise activate zsh)"
+eval "$(vfox activate zsh)"
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
