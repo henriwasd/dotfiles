@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
@@ -23,19 +30,18 @@ zinit light-mode for \
 
 ### Zinit's plugins section ###
 
-zi load zdharma-continuum/history-search-multi-word
-zi light zsh-users/zsh-autosuggestions
-zi light zdharma-continuum/fast-syntax-highlighting
-zi snippet https://gist.githubusercontent.com/hightemp/5071909/raw/
+zinit load zdharma-continuum/history-search-multi-word
+zinit light zsh-users/zsh-autosuggestions
+zinit light zdharma-continuum/fast-syntax-highlighting
+zinit snippet https://gist.githubusercontent.com/hightemp/5071909/raw/
 
 ### Zinit's plugins section ###
 
 ### Zinit's theme section ###
 
-zi ice as"command" from"gh-r" \
-          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
-          atpull"%atclone" src"init.zsh"
-zi light starship/starship
+# Load powerlevel10k theme
+zinit ice depth"1" # git clone depth
+zinit light romkatv/powerlevel10k
 
 ### Zinit's theme section ###
 
@@ -64,8 +70,6 @@ export LD_LIBRARY_PATH=/opt/oracle/instantclient_21_11:$LD_LIBRARY_PATH
 # Oracle Client
 export NLS_LANG="BRAZILIAN PORTUGUESE_BRAZIL.WE8ISO8859P1"
 
-export STARSHIP_CONFIG=~/.config/starship.toml
-
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 eval "$(vfox activate zsh)"
@@ -77,4 +81,5 @@ eval "$(vfox activate zsh)"
 
 export PATH="/home/henri/.shorebird/bin:$PATH"
 
-
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
