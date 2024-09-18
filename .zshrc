@@ -31,19 +31,18 @@ zinit light-mode for \
 ### Zinit's plugins section ###
 
 zinit load zdharma-continuum/history-search-multi-word
-zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
-zinit snippet https://gist.githubusercontent.com/hightemp/5071909/raw/
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
 
 ### Zinit's plugins section ###
-
-### Zinit's theme section ###
 
 # Load powerlevel10k theme
 zinit ice depth"1" # git clone depth
 zinit light romkatv/powerlevel10k
-
-### Zinit's theme section ###
 
 autoload -Uz compinit && compinit
 
@@ -83,3 +82,5 @@ export PATH="/home/henri/.shorebird/bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+alias lazypodman='DOCKER_HOST=unix:///run/user/1000/podman/podman.sock lazydocker'
