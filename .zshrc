@@ -78,9 +78,9 @@ eval "$(vfox activate zsh)"
 [[ -f /home/henri/.dart-cli-completion/zsh-config.zsh ]] && . /home/henri/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 
-export PATH="/home/henri/.shorebird/bin:$PATH"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 alias lazypodman='DOCKER_HOST=unix:///run/user/1000/podman/podman.sock lazydocker'
+
+ export PATH=$PATH:$HOME/shorebird/bin:$PATH
