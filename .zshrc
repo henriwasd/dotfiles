@@ -83,4 +83,6 @@ eval "$(vfox activate zsh)"
 
 alias lazypodman='DOCKER_HOST=unix:///run/user/1000/podman/podman.sock lazydocker'
 
- export PATH=$PATH:$HOME/shorebird/bin:$PATH
+ export PATH="$PATH:/opt/nvim-linux64/bin"
+ export PATH=~/.version-fox/cache/flutter/current/bin/:$PATH
+export PATH="/home/hen/.shorebird/bin:$PATH"
