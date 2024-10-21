@@ -38,6 +38,14 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 eval "$(starship init zsh)"
 eval "$(mise activate zsh)"
+eval "$(vfox activate zsh)"
 
-export PATH="/home/henri/.shorebird/bin:$PATH"
+export PATH="/home/henri/shorebird/bin:$PATH"
 export PATH="$PATH:/opt/nvim-linux64/bin:$PATH"
+
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/henri/.dart-cli-completion/zsh-config.zsh ]] && . /home/henri/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
