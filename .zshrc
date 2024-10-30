@@ -1,25 +1,18 @@
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+eval "$(starship init zsh)"
+
+export STARSHIP_CONFIG=~/.dotfiles/starship.toml
 
 export ZSH="$HOME/.oh-my-zsh"
-
-ZSH_THEME="robbyrussell"
 
 plugins=(
   git
   zsh-autosuggestions
   zsh-syntax-highlighting
   colored-man-pages
-  history-substring-search 
+  history-substring-search
 )
 
 source $ZSH/oh-my-zsh.sh
-
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export PATH=$HOME/.local/bin:$HOME/.cargo/bin:$PATH
 
@@ -43,7 +36,6 @@ export NLS_LANG="BRAZILIAN PORTUGUESE_BRAZIL.WE8ISO8859P1"
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-eval "$(mise activate zsh)"
 eval "$(vfox activate zsh)"
 
 export PATH="/home/henri/.shorebird/bin:$PATH"
@@ -53,4 +45,7 @@ export PATH="$PATH:/opt/nvim-linux64/bin:$PATH"
 ## Completion scripts setup. Remove the following line to uninstall
 [[ -f /home/henri/.dart-cli-completion/zsh-config.zsh ]] && . /home/henri/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
+
+PATH=~/.console-ninja/.bin:$PATH
+
 
