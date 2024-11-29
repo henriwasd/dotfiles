@@ -2,6 +2,8 @@ eval "$(starship init zsh)"
 
 export STARSHIP_CONFIG=~/.dotfiles/starship.toml
 
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
+
 export ZSH="$HOME/.oh-my-zsh"
 
 plugins=(
@@ -31,11 +33,10 @@ alias f= "fetch"
 alias m= "merge"
 alias t= "tag"
 
-export LD_LIBRARY_PATH=/opt/oracle/instantclient_21_11:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/opt/oracle/instantclient_21_11
 export NLS_LANG="BRAZILIAN PORTUGUESE_BRAZIL.WE8ISO8859P1"
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
 eval "$(vfox activate zsh)"
 
 export PATH="/home/henri/.shorebird/bin:$PATH"
