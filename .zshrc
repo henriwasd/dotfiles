@@ -37,10 +37,9 @@ export NLS_LANG="BRAZILIAN PORTUGUESE_BRAZIL.WE8ISO8859P1"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 eval "$(vfox activate zsh)"
-eval "$(zoxide init zsh)"
 
 export PATH="/home/henri/.shorebird/bin:$PATH"
 export PATH="$PATH:/opt/nvim-linux64/bin:$PATH"
 
 PATH=~/.console-ninja/.bin:$PATH
-source <(fzf --zsh)
+
