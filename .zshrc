@@ -36,7 +36,6 @@ alias t= "tag"
 export LD_LIBRARY_PATH=/opt/oracle/instantclient_21_11
 export NLS_LANG="BRAZILIAN PORTUGUESE_BRAZIL.WE8ISO8859P1"
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(vfox activate zsh)"
 
 export PATH="/home/henri/.shorebird/bin:$PATH"
