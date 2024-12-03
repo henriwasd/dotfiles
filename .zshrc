@@ -9,7 +9,6 @@ export ZSH="$HOME/.oh-my-zsh"
 plugins=(
   git
   zsh-autosuggestions
-  zsh-syntax-highlighting
   colored-man-pages
   history-substring-search
 )
