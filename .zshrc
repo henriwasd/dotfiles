@@ -39,3 +39,4 @@ export TZ=America/Sao_Paulo
 
 eval "$(vfox activate zsh)"
 
+export BROWSER=wslview
