@@ -11,6 +11,7 @@ plugins=(
   zsh-autosuggestions
   colored-man-pages
   history-substring-search
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -34,11 +35,7 @@ alias t= "tag"
 
 export LD_LIBRARY_PATH=/opt/oracle/instantclient_21_11
 export NLS_LANG="BRAZILIAN PORTUGUESE_BRAZIL.WE8ISO8859P1"
+export TZ=America/Sao_Paulo
 
 eval "$(vfox activate zsh)"
-
-export PATH="/home/henri/.shorebird/bin:$PATH"
-export PATH="$PATH:/opt/nvim-linux64/bin:$PATH"
-
-PATH=~/.console-ninja/.bin:$PATH
 
