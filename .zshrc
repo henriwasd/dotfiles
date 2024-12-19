@@ -40,3 +40,14 @@ export TZ=America/Sao_Paulo
 eval "$(vfox activate zsh)"
 
 export BROWSER=wslview
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/henri/.dart-cli-completion/zsh-config.zsh ]] && . /home/henri/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
+export PATH="/home/henri/.shorebird/bin:$PATH"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+alias flutter="fvm flutter"
