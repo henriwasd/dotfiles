@@ -39,27 +39,9 @@ export TZ=America/Sao_Paulo
 
 eval "$(vfox activate zsh)"
 
-export BROWSER=wslview
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
-## [Completion]
-## Completion scripts setup. Remove the following line to uninstall
-[[ -f /home/henri/.dart-cli-completion/zsh-config.zsh ]] && . /home/henri/.dart-cli-completion/zsh-config.zsh || true
-## [/Completion]
-
-export PATH="/home/henri/.shorebird/bin:$PATH"
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-export PATH="$PATH:/opt/nvim-linux64/bin"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
-export PATH=$PATH:$JAVA_HOME/bin
+export PATH=$PATH:/mnt/c/Windows/
 export ANDROID_HOME=$HOME/Android/SDK
 export PATH=$PATH:$ANDROID_HOME/cmdline-tools/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-export PATH=$PATH:$HOME/fvm/default/bin:$PATH
