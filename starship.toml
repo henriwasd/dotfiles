@@ -74,7 +74,6 @@ style_root = "bg:color_orange fg:color_fg0"
 format = '[ $user]($style)'
 
 [hostname]
-show_always = true
 style = "bg:color_orange fg:color_fg0"
 ssh_only = false
 format = '[@$hostname ]($style)'
