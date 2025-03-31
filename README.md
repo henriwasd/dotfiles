@@ -1,6 +1,6 @@
 ## Setup dot dotfiles
 cd /tmp && sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si &&
-git clone --recurse-submodules [git@github.com:henriwasd/dotfiles.git](https://github.com/henriwasd/dotfiles.git) ~/.dotfiles &&
+git clone --recurse-submodules git@github.com:henriwasd/dotfiles.git ~/.dotfiles &&
 cd ~ &&
 rm -rf ~/.zshrc &&
 rm -rf ~/.config/nvim &&
