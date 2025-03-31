@@ -5,8 +5,7 @@ rm -rf ~/.zshrc &&
 rm -rf ~/.config/nvim &&
 rm -rf ~/.gitconfig &&
 ln -s ~/.dotfiles/.zshrc ~/.zshrc &&
-ln -s ~/.dotfiles/.gitconfig ~/.gitconfig &&
-ln -s ~/.dotfiles/.config/nvim ~/.config/nvim
+ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
 
 
 # Dar permissão para a pasta .ssh
